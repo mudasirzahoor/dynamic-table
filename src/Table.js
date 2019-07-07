@@ -29,7 +29,7 @@ export default class Table extends React.Component {
                 console.log('Something Went Wrong' +
                   response.status);
                   alert('Something Went Wrong', response.status)
-                  this.setState({is_loading:false})
+                  this.setState({is_loading:false,rows:[{}],columns:[]})
                 return;
               }
             response.json().then((data) => {
@@ -43,7 +43,7 @@ export default class Table extends React.Component {
           }, (error)=> {
             console.log('error')
             alert("Error!!", error)
-            this.setState({is_loading:false})
+            this.setState({is_loading:false,rows:[{}],columns:[]})
           })
     }
     render(){

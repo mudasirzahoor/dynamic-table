@@ -58,7 +58,12 @@ export default class App extends React.Component {
 
     const options = {
       filterType: "dropdown",
-      responsive: "scroll"
+      responsive: "scroll",
+      textLabels: {
+        body: {
+          noMatch: "Sorry, no records found for the given query..",
+        }
+      }
     };
 
     return (
