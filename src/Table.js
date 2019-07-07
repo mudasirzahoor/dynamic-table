@@ -56,12 +56,16 @@ export default class Table extends React.Component {
         const normalized_columns = columns.sort()
         console.log(normalized_columns, normalized_rows,'dd')
         return (
-            is_loading ?
-            <div class="loader">
-              <div class="ball"></div>
-              <span>Fetching Data...</span>
-            </div>: 
-            <App rows={normalized_rows} columns={normalized_columns}/>
+            is_loading ? <Loader/>:<App rows={normalized_rows} columns={normalized_columns}/>
         )
     }
+}
+
+function Loader(){
+  return(
+    <div class="loader">
+      <div class="ball"></div>
+      <span>Fetching Data...</span>
+    </div>
+  )
 }
