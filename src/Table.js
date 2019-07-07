@@ -29,6 +29,7 @@ export default class Table extends React.Component {
                 console.log('Something Went Wrong' +
                   response.status);
                   alert('Something Went Wrong', response.status)
+                  this.setState({is_loading:false})
                 return;
               }
             response.json().then((data) => {
@@ -42,6 +43,7 @@ export default class Table extends React.Component {
           }, (error)=> {
             console.log('error')
             alert("Error!!", error)
+            this.setState({is_loading:false})
           })
     }
     render(){
@@ -54,7 +56,12 @@ export default class Table extends React.Component {
         const normalized_columns = columns.sort()
         console.log(normalized_columns, normalized_rows,'dd')
         return (
-            is_loading ?<span>Loading...</span>: <App rows={normalized_rows} columns={normalized_columns}/>
+            is_loading ?
+            <div class="loader">
+              <div class="ball"></div>
+              <span>Fetching Data...</span>
+            </div>: 
+            <App rows={normalized_rows} columns={normalized_columns}/>
         )
     }
 }
