@@ -2,7 +2,7 @@
  * Created by owaismushtaq on 09/07/19.
  */
 import React, {Component} from 'react';
-import {Nav, Navbar, Button, FormControl, Form, Row, Col, ListGroup} from 'react-bootstrap';
+import {Nav, Navbar, Button, FormControl, Form, Row, Col, ListGroup, Tabs, Tab} from 'react-bootstrap';
 import Logo from './../static/ordb.svg'
 export class Header extends Component {
     constructor(props) {
@@ -41,7 +41,7 @@ export class Browse extends Component {
 
     render() {
         function alertClicked() {
-            alert('You clicked the second ListGroupItem');
+            // alert('You clicked the second ListGroupItem');
         }
 
         return (
@@ -65,10 +65,18 @@ export class Information extends Component {
     render() {
         return (
             <Col sm={12} md={12} className={"height-100 pl-0 pr-0 information_backcolor"}>
-                <ListGroup>
-                    <ListGroup.Item className={"col-blk"}>Cras justo odio</ListGroup.Item>
-                    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                </ListGroup>
+                {/*<ListGroup>*/}
+                {/*<ListGroup.Item className={"col-blk"}>Cras justo odio</ListGroup.Item>*/}
+                {/*<ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>*/}
+                {/*</ListGroup>*/}
+                <Tabs defaultActiveKey="home" transition={false} id="noanim-tab-example">
+                    <Tab eventKey="home" title="About">
+                        <p>Clinical Trial Data</p>
+                    </Tab>
+                    <Tab eventKey="overview" title="Overview">
+                        <p>Data pertaining to health. Data is released from a variety of sources such as the U.S. National Institutes of Health, the European Union Drug Regulatory Authorities, the U.S. Centers for Disease Control and Prevention and more.</p>
+                    </Tab>
+                </Tabs>
             </Col>
         );
     }
