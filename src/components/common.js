@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import {Nav, Navbar, Button, FormControl, Form, Row, Col, ListGroup} from 'react-bootstrap';
-
+import Logo from './../static/ordb.svg'
 export class Header extends Component {
     constructor(props) {
         super(props);
@@ -16,9 +16,11 @@ export class Header extends Component {
         return (
             <Row className={"header_component"}>
                 <Navbar bg="light" variant="light" className={'col-md-12'}>
-                    <div className="col-md-9"></div>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                    <Nav  className="mr-auto justify-content-end">
+                    <div className="col-md-9">
+                        <h2 className="col-wht"><img src={Logo} className="App-logo"/></h2>
+                    </div>
+                    <Navbar.Brand href="#home" className={"col-wht"}>Dashboard</Navbar.Brand>
+                    <Nav className="mr-auto justify-content-end col-wht">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#features">Features</Nav.Link>
                         <Nav.Link href="#pricing">Pricing</Nav.Link>

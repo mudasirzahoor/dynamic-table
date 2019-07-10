@@ -73,6 +73,7 @@ export default class Mult extends React.Component {
             // responsive: "scroll",
             responsive: 'scroll',
             serverSide: true,
+            selectableRows:'none',
             count: this.state.count,
             page: this.state.page,
             textLabels: {
@@ -100,7 +101,6 @@ export default class Mult extends React.Component {
                     columns={this.state.columns}
                     options={options}
                     title={<Typography variant="title">
-                        Dynamic Table
                         {this.state.is_loading &&
                         <CircularProgress size={24} style={{marginLeft: 15, position: 'relative', top: 4}}/>}
                     </Typography>}
